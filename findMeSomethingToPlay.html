@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>
+    <script src="scripts/similarArtistsApp.js"></script>
+    <script src="scripts/Factory_lastFM.js"></script>
+    <script src="scripts/Factory_Artist.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/desktopView.css">
+  </head>
+  <body id="bdy" ng-app="similarArtistsApp">
+    <div id="idContainer" ng-controller="appCtrl">
+      <form ng-submit="onArtistSeedEnter(seedArtist)" id="frm">
+      <span id="searchIcon" class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      <input type="text" ng-model="seedArtist" id="relatedArtist"
+        placeholder="Adele"/>
+      </form>
+      <uib-accordion close-others="oneAtATime" id="accordion"  ng-if="displayList.length > 0">
+        <uib-accordion-group ng-repeat="artist in displayList" is-open="status[artist.name]">
+          <uib-accordion-heading>
+            {{artist.name}}</span><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status[artist.name], 'glyphicon-chevron-right': !status[artist.name]}"></i>
+          </uib-accordion-heading>
+          <img ng-src="{{artist.image[3]['#text']}}" class="classImgInPanel">
+          <table class="tbl">
+            <tr class-="trHeaders">
+              <th class="leftColumn">Top Tracks</th>
+              <th class="centerColumn">Playcount</th>
+              <th class="rightColumn">Listeners</th>
+            </tr>
+            <tr ng-click="openInNewTab(track.url)" ng-repeat="track in artist.toptracks">
+              <td class="leftColumn">{{track.name}}</td>
+              <td class="centerColumn">{{track.playcount}}</td>
+              <td class="rightColumn">{{track.listeners}}</td>
+            </tr>
+          </table>
+        </uib-accordion-group>
+      </uib-accordion>
+      <section id="idHelp">
+        <p ng-if="displayList.length === 0">Sorry! No results for the entered artist (yet).</p>
+        <p ng-hide="ttHelp">Need something to listen to? Enter an artist you like.</p>
+        <article>
+          <h3>TODO:</h3>
+          <ol>
+            <li>Mobile friendly layout.</li>
+            <li>Artist descriptions?</li>
+          </ol>
+        </article>
+      </section>
+    </div>
+
+  </body>
+  <a id="backHome" href="http://zel.io">
+    <img src="resources/svg/back57.svg" id="imgBack">
+  </a>
+  <footer id="ftr">Created by Menard Soliven. Contact me at rz.soliven@gmail.com or
+    check out other random things I made by following the arrow.</footer>
+</html>

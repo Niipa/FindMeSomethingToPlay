@@ -1,0 +1,116 @@
+#idHelp{
+  margin-left:30%;
+  margin-right:30%;
+  color:#FFF;
+}
+
+div.panel-body{
+  background-color:#181818;
+  color:#FFF;
+}
+#idContainer{
+  /*! width:70%; */
+  left:20%;
+  right:20%;
+  position: absolute;
+  top:  10%;
+}
+.classArtistPanel{
+  /*! height:400px; */
+  position: relative;
+  margin-top: 5%;
+}
+#frm{
+  position:relative;
+  margin-left:30%;
+  margin-right:30%;
+  margin-bottom:12px;
+}
+#relatedArtist{
+  width:100%;
+  border-radius:10px;
+  text-align:left;
+  padding-left:2em;
+}
+.classImgInPanel{
+  clear:left;
+  float:left;
+  position:relative;
+}
+table{
+  float:right;
+  position:relative;
+  height:300px;
+  width:70%;
+  /*! right:5%; */
+}
+th:first-child{
+  padding-left:1em;
+  text-align:left;
+}
+th{
+  padding-right:0.5em;
+  text-align:right;
+  font-family:georgia;
+  font-size:large;
+  /*! padding-left:5px; */
+}
+td:first-child{
+  padding-left:1em;
+  text-align:left;
+  width:auto;
+}
+td{
+  padding-right:1em;
+  text-align:right;
+  width:20%;
+}
+.panel-title{
+  font-family:georgia;
+  font-size:x-large;
+}
+tr{
+  /*! padding-left:5px; */
+  height:24px;
+  border-style:none;
+  border-bottom-width:1px;
+  border-bottom-style:solid;
+  border-bottom-color:#737373;
+}
+tr:first-child:hover{
+  background-color:inherit;
+  cursor:unset;
+}
+tr:hover{
+  background-color:#282828;
+  cursor:pointer;
+}
+body{
+  font-family:arial;
+  background-color:#282828;
+}
+#accordion{
+  margin-top:40px;
+}
+#searchIcon{
+  position:absolute;
+  top:25%;
+  left:0.5em;
+  pointer-events:none;
+}
+#imgBack{
+  position:fixed;
+  width:1.5%;
+  left:1%;
+  bottom:1.0%;
+}
+#ftr{
+  position: fixed;
+  bottom:1.5%;
+  left:3%;
+  font-family: georgia;
+  font-size: 14px;
+  color:#FFF;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

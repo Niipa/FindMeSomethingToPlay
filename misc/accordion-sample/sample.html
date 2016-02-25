@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+  <head>
+  <script src="scripts/angular.min.js"></script>
+  <script src="scripts/angular-animate.min.js"></script>
+  <script src="scripts/ui-bootstrap-tpls-1.1.2.min.js"></script>
+  <script src="example.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  </head>
+  <body>
+
+<div ng-controller="AccordionDemoCtrl">
+  <uib-accordion close-others="oneAtATime">
+    <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+      {{group.content}}
+      <!--button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button-->
+    </uib-accordion-group>
+    <uib-accordion-group heading="Dynamic Body Content">
+      <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+      <div ng-repeat="item in items">{{item}}</div>
+    </uib-accordion-group>
+  </uib-accordion>
+</div>
+  </body>
+</html>
